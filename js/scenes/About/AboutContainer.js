@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import {
   ActivityIndicator,
@@ -15,7 +16,8 @@ import {
   View
 } from 'react-native';
 
-import About from './About'
+import About from './About';
+import { fetchingConduct } from '../../redux/modules/conduct';
 
 class AboutContainer extends Component {
 
@@ -27,35 +29,21 @@ class AboutContainer extends Component {
 
     constructor() {
     super();
-    this.state = { 
-        isLoading: true,
-        data: [] };
+
     }
 
     componentDidMount() {
-        fetch('https://r10app-95fea.firebaseio.com/code_of_conduct.json')
-            .then(response => response.json())
-            .then(data => {
-            this.setState({data})
-            })
-            .catch(error => console.log(`Error fetching json`))
+        this.props.dispatch(fetchingConduct());
     } 
-
-    componentDidUpdate() {
-    if (this.state.data && this.state.isLoading) {
-        this.setState({ isLoading: false});
-        }
-    }
 
     render() {
 
-    if(this.state.isLoading) {
+    if(this.props.loading) {
         return <ActivityIndicator animating={true}/>
     } else {
 
         return (
-        <About data={this.state.data}/>
-
+        <About data={this.props.conductData}/>
         )
     }
 }
@@ -65,4 +53,12 @@ AboutContainer.propTypes = {
 
 }
 
-export default AboutContainer;
+const mapStateToProps = (state) => {
+    return {
+        loading: state.conductData.loading,
+        conductData: state.conductData.codeOfConductData
+    };
+};
+
+export default connect (mapStateToProps)(AboutContainer);
+

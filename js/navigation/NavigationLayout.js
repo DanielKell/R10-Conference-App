@@ -7,8 +7,15 @@ import {
   TabNavigation,
   TabNavigationItem as TabItem,
 } from '@expo/ex-navigation';
+import { Text } from 'react-native';
 
+import Icon from 'react-native-vector-icons/Ionicons';
 import { Router } from '../navigation/routes';
+import { colors } from '../config/styles';
+
+function getColor(isSelected) {
+  return isSelected ? 'red' : colors.mediumGrey;
+}
 
 class NavigationLayout extends Component {
 
@@ -16,11 +23,17 @@ class NavigationLayout extends Component {
         return (
     <TabNavigation
 
-        initialTab="about">
+        initialTab="about"
+        tabBarColor="black"
+        >
+
 
         <TabItem
           id="about"
-          title="about">
+          title="about"
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected => this.renderIcon("ios-information-circle", getColor(isSelected))}
+          >
           <StackNavigation
             id="about"
             navigatorUID="about"
@@ -31,6 +44,8 @@ class NavigationLayout extends Component {
         <TabItem
           id="schedule"
           title="schedule"
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected => this.renderIcon("ios-calendar", getColor(isSelected))}
         >
           <StackNavigation
             id="schedule"
@@ -51,6 +66,25 @@ class NavigationLayout extends Component {
       </TabNavigation>
         );
     }
+
+    renderIcon (iconName, isSelected) {
+        //Determine what color the icon should be based on isSelected
+        // Return the icon component with appropriate props set
+        return (
+        <Icon name={iconName} size={30} color={isSelected} />
+        );
+    }
+
+    renderTitle (isSelected, title) {
+        return (
+            <Text
+                style={{color: isSelected ? 'white' : 'red'}}
+            > 
+                {title}
+            </Text>
+        )
+    }
+
 }
 
 export default NavigationLayout;

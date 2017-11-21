@@ -6,4 +6,7 @@ export const colors = {
     red: '#cf392a'
 };
 
-// import { colors } from './config/styles'
+export const fonts = {
+    fontMainReg: "Monserrat",
+    fontMainLight: "Monserrat-light"
+}
