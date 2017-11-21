@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 import { styles } from './styles';
 import {
   ActivityIndicator,
@@ -17,7 +16,10 @@ import {
   View
 } from 'react-native';
 
+
+
 const About = ({data}) => {
+    
     return(
         <View
             style={styles.aboutContainer}

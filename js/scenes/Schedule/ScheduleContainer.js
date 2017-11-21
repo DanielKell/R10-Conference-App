@@ -15,13 +15,13 @@ import {
   View
 } from 'react-native';
 
-import About from './About'
+import Schedule from './Schedule'
 
-class AboutContainer extends Component {
+class ScheduleContainer extends Component {
 
     static route = {
         navigationBar: {
-        title: 'About',
+        title: 'Schedule',
         }
   }
 
@@ -54,15 +54,15 @@ class AboutContainer extends Component {
     } else {
 
         return (
-        <About data={this.state.data}/>
+        <Schedule data={this.state.data}/>
 
         )
     }
 }
 }
 
-AboutContainer.propTypes = {
+ScheduleContainer.propTypes = {
 
 }
 
-export default AboutContainer;
+export default ScheduleContainer;
