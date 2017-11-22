@@ -12,9 +12,20 @@ import { Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Router } from '../navigation/routes';
 import { colors } from '../config/styles';
+import BackgroundGradient from '../components/BackgroundGradient/';
 
 function getColor(isSelected) {
   return isSelected ? 'red' : colors.mediumGrey;
+}
+
+const defaultRouteConfig = {
+  navigationBar: {
+    //Need to add font here?
+    tintColor: 'white',
+    renderBackground: () => (
+      <BackgroundGradient colors={[colors.purple, colors.red]} />
+    )
+  },
 }
 
 class NavigationLayout extends Component {
@@ -22,12 +33,9 @@ class NavigationLayout extends Component {
     render() {
         return (
     <TabNavigation
-
         initialTab="about"
         tabBarColor="black"
         >
-
-
         <TabItem
           id="about"
           title="about"
@@ -38,6 +46,7 @@ class NavigationLayout extends Component {
             id="about"
             navigatorUID="about"
             initialRoute={Router.getRoute('about')}
+            defaultRouteConfig={defaultRouteConfig}
           />
         </TabItem>
 
@@ -50,6 +59,7 @@ class NavigationLayout extends Component {
           <StackNavigation
             id="schedule"
             initialRoute={Router.getRoute('schedule')}
+            defaultRouteConfig={defaultRouteConfig}
           />
         </TabItem>
 
