@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import {
   ActivityIndicator,
@@ -16,7 +17,7 @@ import {
 } from 'react-native';
 
 import Schedule from './Schedule'
-
+import { fetchingSessions } from '../../redux/modules/sessions';
 class ScheduleContainer extends Component {
 
     static route = {
@@ -27,34 +28,29 @@ class ScheduleContainer extends Component {
 
     constructor() {
     super();
-    this.state = { 
-        isLoading: true,
-        data: [] };
+    // this.state = { 
+    //     isLoading: true,
+    //     data: [] };
     }
 
     componentDidMount() {
-        fetch('https://r10app-95fea.firebaseio.com/code_of_conduct.json')
-            .then(response => response.json())
-            .then(data => {
-            this.setState({data})
-            })
-            .catch(error => console.log(`Error fetching json`))
+        this.props.dispatch(fetchingSessions());
     } 
 
-    componentDidUpdate() {
-    if (this.state.data && this.state.isLoading) {
-        this.setState({ isLoading: false});
-        }
-    }
+    // componentDidUpdate() {
+    // if (this.state.data && this.state.isLoading) {
+    //     this.setState({ isLoading: false});
+    //     }
+    // }
 
     render() {
 
-    if(this.state.isLoading) {
+    if(this.props.loading) {
         return <ActivityIndicator animating={true}/>
     } else {
 
         return (
-        <Schedule data={this.state.data}/>
+        <Schedule data={this.props.sessionData}/>
 
         )
     }
@@ -65,4 +61,11 @@ ScheduleContainer.propTypes = {
 
 }
 
-export default ScheduleContainer;
+const mapStateToProps = (state) => {
+    return {
+        loading: state.sessionData.loading,
+        sessionData: state.sessionData.sessionsData
+    };
+};
+
+export default connect (mapStateToProps)(ScheduleContainer);

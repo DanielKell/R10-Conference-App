@@ -16,8 +16,6 @@ import {
   View
 } from 'react-native';
 
-
-
 const About = ({data}) => {
     
     return(

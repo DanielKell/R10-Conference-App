@@ -6,10 +6,10 @@ const FETCH_CONDUCT = 'fetch_conduct';
 
 //Create action creators
 
-export function fetchCodeOfConduct(placeholder) {
+export function fetchCodeOfConduct(data) {
     return {
         type: FETCH_CONDUCT,
-        payload: placeholder
+        payload: data
     }
 }
 
@@ -26,9 +26,7 @@ export function fetchingConduct() {
             })
     }
 }
-
 // Create and export reducer
-
 const initialState = {
     loading: true,
     codeOfConductData: []
@@ -39,9 +37,9 @@ const initialState = {
 
          case FETCH_CONDUCT:
              return {
+                 ...state,
                  loading: false,
                  codeOfConductData: action.payload
-                 //Removed action.payload because don't need payload?
              };
          default:
              return state;
