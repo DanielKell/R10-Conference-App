@@ -15,7 +15,7 @@ import { colors } from '../config/styles';
 import BackgroundGradient from '../components/BackgroundGradient/';
 
 function getColor(isSelected) {
-  return isSelected ? 'red' : colors.mediumGrey;
+  return isSelected ? colors.red : colors.mediumGrey;
 }
 
 const defaultRouteConfig = {
@@ -63,6 +63,19 @@ class NavigationLayout extends Component {
           />
         </TabItem>
 
+        <TabItem
+          id="faves"
+          title="faves"
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected => this.renderIcon("ios-calendar", getColor(isSelected))}
+        >
+          <StackNavigation
+            id="faves"
+            initialRoute={Router.getRoute('faves')}
+            defaultRouteConfig={defaultRouteConfig}
+          />
+        </TabItem>
+
         {/*<TabItem
           id="profile"
           title="Profile"
@@ -88,7 +101,7 @@ class NavigationLayout extends Component {
     renderTitle (isSelected, title) {
         return (
             <Text
-                style={{color: isSelected ? 'white' : 'red'}}
+                style={{color: isSelected ? colors.red : colors.mediumGrey}}
             > 
                 {title}
             </Text>
