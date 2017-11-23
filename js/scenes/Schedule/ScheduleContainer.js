@@ -18,19 +18,17 @@ import {
 
 import Schedule from './Schedule'
 import { fetchingSessions } from '../../redux/modules/sessions';
+import { goToSession } from '../../navigation/navigationHelpers';
 class ScheduleContainer extends Component {
 
     static route = {
         navigationBar: {
         title: 'Schedule',
         }
-  }
+    }
 
     constructor() {
-    super();
-    // this.state = { 
-    //     isLoading: true,
-    //     data: [] };
+        super();
     }
 
     componentDidMount() {
@@ -50,7 +48,7 @@ class ScheduleContainer extends Component {
     } else {
 
         return (
-        <Schedule data={this.props.sessionData}/>
+        <Schedule data={this.props.sessionData} currentNavigatorUID={this.props.currentNavigatorUID}/>
 
         )
     }
@@ -64,7 +62,8 @@ ScheduleContainer.propTypes = {
 const mapStateToProps = (state) => {
     return {
         loading: state.sessionData.loading,
-        sessionData: state.sessionData.sessionsData
+        sessionData: state.sessionData.sessionsData,
+        currentNavigatorUID: state.navigation.currentNavigatorUID
     };
 };
 

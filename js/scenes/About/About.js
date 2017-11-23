@@ -19,6 +19,7 @@ import {
 const About = ({data}) => {
     
     return(
+    <ScrollView>
         <View
             style={styles.aboutContainer}
         >
@@ -70,6 +71,7 @@ const About = ({data}) => {
                 keyExtractor={(item) => item.title}
             />
     </View>
+    </ScrollView>
     );
 }
 

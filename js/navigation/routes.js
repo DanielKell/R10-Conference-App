@@ -5,6 +5,7 @@ import {
 import AboutContainer from '../scenes/About';
 import ScheduleContainer from '../scenes/Schedule';
 import Layout from './NavigationLayout';
+import SessionsContainer from '../scenes/Sessions/';
 
 /**
   * This is where we map route names to route components. Any React
@@ -16,4 +17,5 @@ export const Router = createRouter(() => ({
   layout: () => Layout,
   about: () => AboutContainer,
   schedule: () => ScheduleContainer,
+  session: () => SessionsContainer,
 }));
