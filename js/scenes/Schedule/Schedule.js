@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
-import { Text, SectionList, View, ListItem, TouchableOpacity} from 'react-native';
+import { Platform, Text, SectionList, View, ListItem, TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import { styles } from './styles';
 import { goToSession } from '../../navigation/navigationHelpers';
@@ -13,6 +14,14 @@ const Schedule = ({ data, currentNavigatorUID }) => (
           <TouchableOpacity onPress={() => goToSession(currentNavigatorUID, item)}>
             <View>
               <Text style={styles.itemTitle}>{item.title}</Text>
+              
+              {Platform.OS === 'ios' &&
+                <Icon name="ios-heart" size={30} color='red' />
+              }
+              {Platform.OS === 'android' &&
+                  <Icon name="md-heart" size={30} color='red' />
+              }
+
               <Text style={styles.itemLocation}>{item.location}</Text>
             </View>
           </TouchableOpacity>
