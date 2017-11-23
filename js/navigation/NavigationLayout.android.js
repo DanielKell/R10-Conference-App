@@ -48,6 +48,7 @@ class NavigationLayout extends Component {
           <StackNavigation
             id='schedule'
             initialRoute={Router.getRoute('schedule')}
+            defaultRouteConfig={defaultRouteConfig}
           />
         </DrawerNavigationItem>
 
@@ -59,6 +60,7 @@ class NavigationLayout extends Component {
           <StackNavigation
             id='faves'
             initialRoute={Router.getRoute('faves')}
+            defaultRouteConfig={defaultRouteConfig}
           />
         </DrawerNavigationItem>
 
@@ -70,6 +72,7 @@ class NavigationLayout extends Component {
           <StackNavigation
             id='about'
             initialRoute={Router.getRoute('about')}
+            defaultRouteConfig={defaultRouteConfig}
           />
         </DrawerNavigationItem>
 
