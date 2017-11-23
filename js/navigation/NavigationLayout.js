@@ -11,7 +11,7 @@ import { Text } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Router } from '../navigation/routes';
-import { colors } from '../config/styles';
+import { colors, fonts } from '../config/styles';
 import BackgroundGradient from '../components/BackgroundGradient/';
 
 function getColor(isSelected) {
@@ -20,7 +20,7 @@ function getColor(isSelected) {
 
 const defaultRouteConfig = {
   navigationBar: {
-    //Need to add font here?
+    fontFamily: fonts.fontMainLight,
     tintColor: 'white',
     renderBackground: () => (
       <BackgroundGradient colors={[colors.purple, colors.red]} />
@@ -36,19 +36,6 @@ class NavigationLayout extends Component {
         initialTab="about"
         tabBarColor="black"
         >
-        <TabItem
-          id="about"
-          title="about"
-          renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon("ios-information-circle", getColor(isSelected))}
-          >
-          <StackNavigation
-            id="about"
-            navigatorUID="about"
-            initialRoute={Router.getRoute('about')}
-            defaultRouteConfig={defaultRouteConfig}
-          />
-        </TabItem>
 
         <TabItem
           id="schedule"
@@ -67,7 +54,7 @@ class NavigationLayout extends Component {
           id="faves"
           title="faves"
           renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon("ios-calendar", getColor(isSelected))}
+          renderIcon={isSelected => this.renderIcon("ios-heart", getColor(isSelected))}
         >
           <StackNavigation
             id="faves"
@@ -75,6 +62,21 @@ class NavigationLayout extends Component {
             defaultRouteConfig={defaultRouteConfig}
           />
         </TabItem>
+
+        <TabItem
+          id="about"
+          title="about"
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected => this.renderIcon("ios-information-circle", getColor(isSelected))}
+          >
+          <StackNavigation
+            id="about"
+            navigatorUID="about"
+            initialRoute={Router.getRoute('about')}
+            defaultRouteConfig={defaultRouteConfig}
+          />
+        </TabItem>
+
 
         {/*<TabItem
           id="profile"

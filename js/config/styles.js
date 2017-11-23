@@ -1,3 +1,5 @@
+import { Platform, StyleSheet } from 'react-native';
+
 export const colors = {
     mediumGrey: '#999999',
     lightGrey: '#e6e6e6',
@@ -7,6 +9,28 @@ export const colors = {
 };
 
 export const fonts = {
-    fontMainReg: "Monserrat",
-    fontMainLight: "Monserrat-light"
+
+    ...Platform.select({
+        ios: {
+            fontMainReg: "Montserrat"
+        },
+        android: {
+            fontMainReg: "Montserrat-Regular"
+        }
+    }),
+    fontMainLight: "Montserrat-Light"
 }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     ...Platform.select({
+//       ios: {
+//         backgroundColor: 'red',
+//       },
+//       android: {
+//         backgroundColor: 'blue',
+//       },
+//     }),
+//   },
+// });

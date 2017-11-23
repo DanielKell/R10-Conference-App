@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
         padding: 6,
         paddingLeft: 12,
         fontSize: 12,
-        // fontFamily: fonts.fontMainReg,
+        fontFamily: fonts.fontMainReg,
     },
     borders: {
         flex: 1,
@@ -17,13 +17,13 @@ export const styles = StyleSheet.create({
       },
     itemTitle: {
         margin: 10,
-        // fontFamily: fonts.fontMainReg,
+        fontFamily: fonts.fontMainReg,
     },
     itemLocation: {
         color: colors.mediumGrey,
         marginBottom: 12,
         marginLeft: 12,
         fontSize: 12,
-        // fontFamily: fonts.fontMainReg,
+        fontFamily: fonts.fontMainReg,
     }
 });
