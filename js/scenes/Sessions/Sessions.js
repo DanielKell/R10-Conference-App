@@ -1,8 +1,9 @@
 import React from 'react';
-import { Platform, Text, View, ScrollView, Image } from 'react-native';
+import { Platform, Text, View, ScrollView, Image, TouchableHighlight } from 'react-native';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/Ionicons';
 
+import { goToSpeaker } from '../../navigation/navigationHelpers'
 import { styles } from './styles';
 
 const Session = ({ sessionData, speakerData }) => {
@@ -25,11 +26,16 @@ const Session = ({ sessionData, speakerData }) => {
             <Text style={styles.subheading}>Presented By:</Text>
         </View>
         <View>
-            <Text> {speakerData.name} </Text>
-            <Image
-              style={styles.image}
-              source={{ uri: speakerData.image }}
-            />
+            
+        <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>
+            <View>
+                <Image
+                    style={styles.image}
+                    source={{ uri: speakerData.image }}
+                />
+                <Text> {speakerData.name} </Text>
+            </View>
+        </TouchableHighlight>
         </View>
 
     </ScrollView>

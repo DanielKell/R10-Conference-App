@@ -12,10 +12,7 @@ class SessionContainer extends Component {
   }
 
     componentDidMount() {
-      // const { speaker } = this.props.sessionData;
-
       this.props.dispatch(fetchSpeakerData(this.props.sessionData.speaker));
-      console.log(this.props);
     } 
 
   render() {

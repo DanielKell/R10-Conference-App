@@ -32,9 +32,9 @@ class SpeakersContainer extends Component {
         super();
     }
 
-    componentDidMount() {
-        this.props.dispatch(fetchSpeakerData());
-    } 
+    // componentDidMount() {
+    //     this.props.dispatch(fetchSpeakerData());
+    // } 
 
     render() {
 
@@ -44,7 +44,6 @@ class SpeakersContainer extends Component {
 
         return (
         <Speakers speakerData={this.props.speaker}/>
-
         )
     }
 }
