@@ -7,7 +7,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { styles } from './styles';
 import { goToSession } from '../../navigation/navigationHelpers';
 
-const Schedule = ({ data, currentNavigatorUID }) => (
+const Schedule = ({ data, currentNavigatorUID, speakerData }) => (
     <SectionList
       renderItem={({item}) => { 
         return (

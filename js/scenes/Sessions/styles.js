@@ -40,5 +40,11 @@ export const styles = StyleSheet.create({
     marginTop: 10,
     color: colors.mediumGrey,
     fontFamily: fonts.fontMainReg,
-  }
+  },
+  image: {
+    marginRight: 10,
+    borderRadius: 25,
+    height: 50,
+    width: 50,
+  },
 });

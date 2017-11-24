@@ -35,12 +35,6 @@ class ScheduleContainer extends Component {
         this.props.dispatch(fetchingSessions());
     } 
 
-    // componentDidUpdate() {
-    // if (this.state.data && this.state.isLoading) {
-    //     this.setState({ isLoading: false});
-    //     }
-    // }
-
     render() {
 
     if(this.props.loading) {
@@ -48,7 +42,10 @@ class ScheduleContainer extends Component {
     } else {
 
         return (
-        <Schedule data={this.props.sessionData} currentNavigatorUID={this.props.currentNavigatorUID}/>
+        <Schedule 
+            data={this.props.sessionData} 
+            currentNavigatorUID={this.props.currentNavigatorUID}   
+        />
 
         )
     }
@@ -63,7 +60,7 @@ const mapStateToProps = (state) => {
     return {
         loading: state.sessionData.loading,
         sessionData: state.sessionData.sessionsData,
-        currentNavigatorUID: state.navigation.currentNavigatorUID
+        currentNavigatorUID: state.navigation.currentNavigatorUID,
     };
 };
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Platform, Text, View, ScrollView } from 'react-native';
+import { Platform, Text, View, ScrollView, Image } from 'react-native';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { styles } from './styles';
 
-const Session = ({ sessionData }) => {
+const Session = ({ sessionData, speakerData }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.locationContainer}>
@@ -23,6 +23,13 @@ const Session = ({ sessionData }) => {
             <Text style={styles.time}>{moment.unix(sessionData.start_time).format('LT')}</Text>
             <Text style={styles.description}>{sessionData.description}</Text>
             <Text style={styles.subheading}>Presented By:</Text>
+        </View>
+        <View>
+            <Text> {speakerData.name} </Text>
+            <Image
+              style={styles.image}
+              source={{ uri: speakerData.image }}
+            />
         </View>
 
     </ScrollView>
