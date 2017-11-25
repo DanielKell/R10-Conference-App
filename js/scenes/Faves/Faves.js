@@ -1,21 +1,19 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import moment from 'moment';
+import {
+  Text,
+  View,
+  Image,
+  ScrollView,
+  ActivityIndicator
+} from 'react-native';
 
-const Faves = () => {
-  return (
-    <View>
-      <View>
-        <Text>Hi</Text>
-      </View>
-      <View>
-        <Text>Hi</Text>
-        <Text>Hi</Text>
-        <Text>Hi</Text>
-      </View>
-    </View>
+import { Sessions } from '../Sessions';
+import { formatSessionData } from '../../lib/dataHelpers';
+
+const Faves = ({faveSession}) => {
+  return(
+    <Sessions sessionData={formatSessionData(faveSession)} currentNavigatorUID={'faves'}/>
   )
 }
-
 
 export default Faves;

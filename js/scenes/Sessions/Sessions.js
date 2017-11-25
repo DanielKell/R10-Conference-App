@@ -1,12 +1,14 @@
 import React from 'react';
-import { Platform, Text, View, ScrollView, Image, TouchableHighlight } from 'react-native';
+import { Platform, Text, View, ScrollView, Image, TouchableHighlight, TouchableOpacity, Button } from 'react-native';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { goToSpeaker } from '../../navigation/navigationHelpers'
 import { styles } from './styles';
+// import Button from '../../components/Button';
+import { createFave, deleteFave } from '../../config/models';
 
-const Session = ({ sessionData, speakerData }) => {
+const Session = ({sessionData, speakerData, allFavourites}) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.locationContainer}>
@@ -37,6 +39,28 @@ const Session = ({ sessionData, speakerData }) => {
             </View>
         </TouchableHighlight>
         </View>
+        {/*<View >
+            {isFave ? (
+                <TouchableOpacity onPress={() => deleteFave(sessionData.session_id)}>
+                    <Button
+                        title='Remove from Faves'
+                    />
+                </TouchableOpacity>
+            ) : (
+                <TouchableOpacity onPress={() => createFave(sessionData.session_id)}>
+                    <Button
+                        title='Add to Faves'
+                    />
+                </TouchableOpacity>
+                )
+            }
+        </View>*/}
+      <Button
+        onPress={allFavourites.indexOf(sessionData.session_id) >=0 ? () => deleteFave(sessionData.session_id): () => createFave(sessionData.session_id)}
+        title={allFavourites.indexOf(sessionData.session_id) >=0 ? "Remove from Favourites" : "Add to Favourites"}
+        color="#841584"
+        accessibilityLabel={allFavourites.indexOf(sessionData.session_id) >=0 ? "Add session to favourite" : "Remove session to favourite"}
+      />
 
     </ScrollView>
   )

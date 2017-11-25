@@ -12,3 +12,12 @@ export const formatSessionData = (sessions) => {
     return acc;
   }, []).sort((a, b) => a.title - b.title);
 };
+
+// export const findFave= (faves, sessionData) => {
+//   let isFave = false;
+
+//   if (faves.find(x => sessionData.session_id === x.id)) {
+//     isFave = true
+//   }
+//   return isFave
+// }

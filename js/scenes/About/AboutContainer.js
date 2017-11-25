@@ -30,7 +30,17 @@ class AboutContainer extends Component {
     constructor() {
     super();
 
+    this.state = {
+        showText: false
     }
+
+}
+
+show = () => {
+  // LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
+//   LayoutAnimation.configureNext(animationConfig);
+  this.setState({ showText: true });
+}
 
     componentDidMount() {
         this.props.dispatch(fetchingConduct());
@@ -43,7 +53,7 @@ class AboutContainer extends Component {
     } else {
 
         return (
-        <About data={this.props.conductData}/>
+        <About data={this.props.conductData} showText={this.showText}/>
         )
     }
 }

@@ -16,7 +16,14 @@ import {
   View
 } from 'react-native';
 
-const About = ({data}) => {
+
+const About = ({data, showText}) => {
+
+show = () => {
+  // LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
+//   LayoutAnimation.configureNext(animationConfig);
+  this.setState({ showText: true });
+}
     
     return(
     <ScrollView>
@@ -58,14 +65,19 @@ const About = ({data}) => {
                 data={data}
                 renderItem={({ item }) => 
                 <View>
+            <TouchableOpacity>
                 <Text
                     style={styles.codeOfConductTitle}
                 >
                     {item.title}
                 </Text>
+            </TouchableOpacity>
+            
+            {showText &&
                 <Text>
                     {item.description}
-                </Text>           
+                </Text>
+            }
                 </View>}
 
                 keyExtractor={(item) => item.title}
