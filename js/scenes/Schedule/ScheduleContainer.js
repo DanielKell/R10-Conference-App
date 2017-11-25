@@ -40,7 +40,6 @@ class ScheduleContainer extends Component {
     if(this.props.loading) {
         return <ActivityIndicator animating={true}/>
     } else {
-
         return (
         <Schedule 
             data={this.props.sessionData} 

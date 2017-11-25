@@ -8,7 +8,7 @@ import { styles } from './styles';
 // import Button from '../../components/Button';
 import { createFave, deleteFave } from '../../config/models';
 
-const Session = ({sessionData, speakerData, allFavourites}) => {
+const Sessions = ({sessionData, speakerData, allFavourites}) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.locationContainer}>
@@ -66,4 +66,4 @@ const Session = ({sessionData, speakerData, allFavourites}) => {
   )
 }
 
-export default Session;
+export default Sessions;

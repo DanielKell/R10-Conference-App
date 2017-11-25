@@ -7,12 +7,12 @@ import {
   ActivityIndicator
 } from 'react-native';
 
-import { Sessions } from '../Sessions';
+import Schedule from '../Schedule/Schedule';
 import { formatSessionData } from '../../lib/dataHelpers';
 
-const Faves = ({faveSession}) => {
+const Faves = ({faveSession, currentNavigatorUID}) => {
   return(
-    <Sessions sessionData={formatSessionData(faveSession)} currentNavigatorUID={'faves'}/>
+    <Schedule data={formatSessionData(faveSession)} currentNavigatorUID={currentNavigatorUID}/>
   )
 }
 
