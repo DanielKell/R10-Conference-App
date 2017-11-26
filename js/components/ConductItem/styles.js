@@ -18,6 +18,6 @@ export const styles = StyleSheet.create({
   content: {
     color: colors.mediumGrey,
     fontFamily: fonts.fontMainLight,
-    fontSize: 12
+    fontSize: 14
   }
 });

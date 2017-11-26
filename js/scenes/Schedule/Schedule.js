@@ -23,7 +23,7 @@ const Schedule = ({ data, currentNavigatorUID, faves }) => (
                   {faves.indexOf(item.session_id) > -1 && Platform.OS === 'ios' &&
                     <Icon style={styles.heart} name="ios-heart" size={20} color='red' />
                   }
-                  {Platform.OS === 'android' &&
+                  {faves.indexOf(item.session_id) > -1 && Platform.OS === 'android' &&
                       <Icon style={styles.heart} name="md-heart" size={20} color='red' />
                   }
                   
