@@ -19,6 +19,7 @@ import {
 import Schedule from './Schedule'
 import { fetchingSessions } from '../../redux/modules/sessions';
 import { goToSession } from '../../navigation/navigationHelpers';
+import { getAllFaves } from '../../redux/modules/faves';
 class ScheduleContainer extends Component {
 
     static route = {
@@ -33,6 +34,7 @@ class ScheduleContainer extends Component {
 
     componentDidMount() {
         this.props.dispatch(fetchingSessions());
+        this.props.dispatch(getAllFaves());
     } 
 
     render() {
@@ -43,7 +45,8 @@ class ScheduleContainer extends Component {
         return (
         <Schedule 
             data={this.props.sessionData} 
-            currentNavigatorUID={this.props.currentNavigatorUID}   
+            currentNavigatorUID={this.props.currentNavigatorUID}
+            faves={this.props.allFavourites} 
         />
 
         )
@@ -60,6 +63,7 @@ const mapStateToProps = (state) => {
         loading: state.sessionData.loading,
         sessionData: state.sessionData.sessionsData,
         currentNavigatorUID: state.navigation.currentNavigatorUID,
+        allFavourites: state.favesData.allFavourites
     };
 };
 

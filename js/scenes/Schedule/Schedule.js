@@ -7,22 +7,27 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { styles } from './styles';
 import { goToSession } from '../../navigation/navigationHelpers';
 
-const Schedule = ({ data, currentNavigatorUID, speakerData }) => (
+const Schedule = ({ data, currentNavigatorUID, faves }) => (
     <SectionList
       renderItem={({item}) => { 
+
         return (
           <TouchableOpacity onPress={() => goToSession(currentNavigatorUID, item)}>
             <View>
               <Text style={styles.itemTitle}>{item.title}</Text>
               
-              {Platform.OS === 'ios' &&
-                <Icon name="ios-heart" size={30} color='red' />
-              }
-              {Platform.OS === 'android' &&
-                  <Icon name="md-heart" size={30} color='red' />
-              }
+                <View style={styles.locationAndHeart}>
 
-              <Text style={styles.itemLocation}>{item.location}</Text>
+                  <Text style={styles.itemLocation}>{item.location}</Text>
+
+                  {faves.indexOf(item.session_id) > -1 && Platform.OS === 'ios' &&
+                    <Icon style={styles.heart} name="ios-heart" size={20} color='red' />
+                  }
+                  {Platform.OS === 'android' &&
+                      <Icon style={styles.heart} name="md-heart" size={20} color='red' />
+                  }
+                  
+                </View>
             </View>
           </TouchableOpacity>
         )}

@@ -33,6 +33,7 @@ class FaveContainer extends Component {
 
     for (let i = 0; i < sessionData.length; i++) {
       newFaves.push(sessionData[i].data[0])
+      if (sessionData[i].data[1]) newFaves.push(sessionData[i].data[1])
     }
 
     const faveSessions = newFaves.filter(session => {
@@ -46,6 +47,7 @@ class FaveContainer extends Component {
         return (
           <Faves faveSession={faveSessions} 
           currentNavigatorUID={this.props.currentNavigatorUID}
+          faves={allFavourites}
           />
         );
     }

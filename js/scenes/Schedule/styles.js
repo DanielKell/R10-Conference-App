@@ -23,7 +23,15 @@ export const styles = StyleSheet.create({
         color: colors.mediumGrey,
         marginBottom: 12,
         marginLeft: 12,
-        fontSize: 12,
+        fontSize: 14,
         fontFamily: fonts.fontMainReg,
+    },
+    locationAndHeart: {
+        flex: 1,
+        justifyContent: 'space-between',
+        flexDirection: 'row'
+    },
+    heart: {
+        marginRight: 20
     }
 });

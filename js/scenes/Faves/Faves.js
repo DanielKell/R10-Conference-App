@@ -10,9 +10,13 @@ import {
 import Schedule from '../Schedule/Schedule';
 import { formatSessionData } from '../../lib/dataHelpers';
 
-const Faves = ({faveSession, currentNavigatorUID}) => {
+const Faves = ({faveSession, currentNavigatorUID, faves}) => {
   return(
-    <Schedule data={formatSessionData(faveSession)} currentNavigatorUID={currentNavigatorUID}/>
+    <Schedule 
+      data={formatSessionData(faveSession)} 
+      currentNavigatorUID={currentNavigatorUID}
+      faves={faves}
+    />
   )
 }
 
