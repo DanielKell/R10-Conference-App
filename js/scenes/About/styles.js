@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+import { colors, fonts } from '../../config/styles';
+
 export const styles = StyleSheet.create({
     aboutContainer: {
         padding: '4%'
@@ -16,7 +18,8 @@ export const styles = StyleSheet.create({
   },
   generalText: {
     marginTop: 10,
-    marginBottom: 10
+    marginBottom: 10,
+    fontFamily: fonts.fontMainLight,
   },
   logo: {
       height: 100,
@@ -26,5 +29,16 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     borderBottomColor: '#e6e6e6',
     borderBottomWidth: 1,
-  }
+  },
+  footer: {
+    marginBottom: 15,
+    marginLeft: 15,
+    paddingTop: 15,
+    borderTopColor: '#e6e6e6',
+    borderTopWidth: 1
+    },
+  footerText: {
+    fontFamily: fonts.fontMainLight,
+    fontSize: 14
+    }
 });

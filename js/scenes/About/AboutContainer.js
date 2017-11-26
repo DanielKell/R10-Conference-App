@@ -37,8 +37,6 @@ class AboutContainer extends Component {
 }
 
 show = () => {
-  // LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
-//   LayoutAnimation.configureNext(animationConfig);
   this.setState({ showText: true });
 }
 

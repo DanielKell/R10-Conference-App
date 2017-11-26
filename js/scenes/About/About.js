@@ -66,6 +66,11 @@ show = () => {
               })
             }
         </View>
+        <View style={styles.footer}>
+            <Text style={styles.footerText}>
+                © RED Academy 2017
+            </Text>
+        </View>
     </ScrollView>
     );
 }
