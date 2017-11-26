@@ -43,10 +43,6 @@ class FaveContainer extends Component {
     if(this.props.loading) {
         return <ActivityIndicator animating={true}/>
     } else {
-    console.log(sessionData);
-    console.log(newFaves);
-    console.log(allFavourites);  
-    console.log(faveSessions);    
         return (
           <Faves faveSession={faveSessions} 
           currentNavigatorUID={this.props.currentNavigatorUID}

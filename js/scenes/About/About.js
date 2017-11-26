@@ -16,12 +16,11 @@ import {
   View
 } from 'react-native';
 
+import ConductItem from '../../components/ConductItem';
 
 const About = ({data, showText}) => {
 
 show = () => {
-  // LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
-//   LayoutAnimation.configureNext(animationConfig);
   this.setState({ showText: true });
 }
     
@@ -61,28 +60,12 @@ show = () => {
                 Code of Conduct
             </Text>
 
-            <FlatList
-                data={data}
-                renderItem={({ item }) => 
-                <View>
-            <TouchableOpacity>
-                <Text
-                    style={styles.codeOfConductTitle}
-                >
-                    {item.title}
-                </Text>
-            </TouchableOpacity>
-            
-            {showText &&
-                <Text>
-                    {item.description}
-                </Text>
+            {
+              data.map((item) => {
+                return <ConductItem itemData={item} key={item.title} />
+              })
             }
-                </View>}
-
-                keyExtractor={(item) => item.title}
-            />
-    </View>
+        </View>
     </ScrollView>
     );
 }
