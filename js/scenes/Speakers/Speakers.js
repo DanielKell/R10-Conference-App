@@ -1,9 +1,10 @@
 import React from 'react';
-import { Platform, Text, View, ScrollView, Image } from 'react-native';
+import { Platform, Text, View, ScrollView, Image, TouchableOpacity, Linking } from 'react-native';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { styles } from './styles';
+import Button from '../../components/Button';
 
 const Speakers = ({ speakerData }) => {
   return (
@@ -20,6 +21,15 @@ const Speakers = ({ speakerData }) => {
           <Text style={styles.heading}>{speakerData.name}</Text>
           <Text style={styles.content}>{speakerData.bio}</Text>
         </View>
+
+                    <View style={styles.buttonContainer}>
+                <TouchableOpacity 
+                    onPress={() => Linking.openURL(`${speakerData.url}`)}
+                    style={styles.button}
+                >
+                    <Button buttonText="Read more on Wikipedia"/>
+                </TouchableOpacity>
+            </View>
       </View>
     </ScrollView>
   )

@@ -55,5 +55,9 @@ export const styles = StyleSheet.create({
   },
   speakerName: {
     fontFamily: fonts.fontMainReg
+  },
+  buttonStyles: {
+    marginTop: 10,
+    marginLeft: 50
   }
 });
