@@ -27,14 +27,14 @@ export const styles = StyleSheet.create({
   logoContainer: {
     height: 100,
     alignItems: 'center',
-    borderBottomColor: '#e6e6e6',
+    borderBottomColor: colors.mediumGrey,
     borderBottomWidth: 1,
   },
   footer: {
     marginBottom: 15,
     marginLeft: 15,
     paddingTop: 15,
-    borderTopColor: '#e6e6e6',
+    borderTopColor: colors.mediumGrey,
     borderTopWidth: 1
     },
   footerText: {

@@ -4,7 +4,6 @@ import { colors, fonts } from '../../config/styles';
 export const styles = StyleSheet.create({
   container: {
     flex: 0,
-    alignItems: 'center',
     padding: 6
   },
   locationContainer: {
@@ -42,9 +41,19 @@ export const styles = StyleSheet.create({
     fontFamily: fonts.fontMainReg,
   },
   image: {
-    marginRight: 10,
+    marginRight: 8,
     borderRadius: 25,
     height: 50,
     width: 50,
   },
+  speaker: {
+    flex: 0,
+    flexDirection: 'row',
+    marginLeft: 10,
+    alignItems: 'center',
+
+  },
+  speakerName: {
+    fontFamily: fonts.fontMainReg
+  }
 });

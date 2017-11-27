@@ -8,16 +8,16 @@ import { styles } from './styles';
 // import Button from '../../components/Button';
 import { createFave, deleteFave } from '../../config/models';
 
-const Sessions = ({sessionData, speakerData, allFavourites}) => {
+const Sessions = ({sessionData, speakerData, faves}) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.locationContainer}>
 
             <Text style={styles.subheading}>{sessionData.location}</Text>
-            {Platform.OS === 'ios' &&
+            {faves.indexOf(sessionData.session_id) > -1 && Platform.OS === 'ios' &&
                 <Icon name="ios-heart" size={30} color='red' />
             }
-            {Platform.OS === 'android' &&
+            {faves.indexOf(sessionData.session_id) > -1 && Platform.OS === 'android' &&
                 <Icon name="md-heart" size={30} color='red' />
             }
         </View>
@@ -30,36 +30,21 @@ const Sessions = ({sessionData, speakerData, allFavourites}) => {
         <View>
             
         <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>
-            <View>
+            <View style={styles.speaker}>
                 <Image
                     style={styles.image}
                     source={{ uri: speakerData.image }}
                 />
-                <Text> {speakerData.name} </Text>
+                <Text style={styles.speakerName}> {speakerData.name} </Text>
             </View>
         </TouchableHighlight>
         </View>
-        {/*<View >
-            {isFave ? (
-                <TouchableOpacity onPress={() => deleteFave(sessionData.session_id)}>
-                    <Button
-                        title='Remove from Faves'
-                    />
-                </TouchableOpacity>
-            ) : (
-                <TouchableOpacity onPress={() => createFave(sessionData.session_id)}>
-                    <Button
-                        title='Add to Faves'
-                    />
-                </TouchableOpacity>
-                )
-            }
-        </View>*/}
+
       <Button
-        onPress={allFavourites.indexOf(sessionData.session_id) >=0 ? () => deleteFave(sessionData.session_id): () => createFave(sessionData.session_id)}
-        title={allFavourites.indexOf(sessionData.session_id) >=0 ? "Remove from Favourites" : "Add to Favourites"}
+        onPress={faves.indexOf(sessionData.session_id) >=0 ? () => deleteFave(sessionData.session_id): () => createFave(sessionData.session_id)}
+        title={faves.indexOf(sessionData.session_id) >=0 ? "Remove from Faves" : "Add to Faves"}
         color="#841584"
-        accessibilityLabel={allFavourites.indexOf(sessionData.session_id) >=0 ? "Add session to favourite" : "Remove session to favourite"}
+        accessibilityLabel={faves.indexOf(sessionData.session_id) >=0 ? "Add session to favourite" : "Remove session to favourite"}
       />
 
     </ScrollView>

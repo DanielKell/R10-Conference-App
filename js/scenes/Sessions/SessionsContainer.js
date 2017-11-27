@@ -36,7 +36,7 @@ class SessionContainer extends Component {
     const { sessionData, speaker, allFavourites } = this.props;
     // const fave = findFave(this.props.faveIds, sessionData);
     return (
-      <Sessions sessionData={ sessionData } speakerData={ speaker } allFavourites={allFavourites}/> 
+      <Sessions sessionData={ sessionData } speakerData={ speaker } faves={allFavourites}/> 
     );
   }
 }
