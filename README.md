@@ -25,6 +25,6 @@ Note: The app was designed for smaller sized iphones in an attempt to style for 
 - PropTypes
 
 # Left to do:
-- Fix a big with the button text appearing below the button
+- Fix a bug with the button text appearing below the button
 - Add a "Maps" page
 - Finish adding Proptypes
