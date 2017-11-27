@@ -1,4 +1,3 @@
-//Working here
 
 import React, { Component } from 'react';
 
@@ -83,8 +82,6 @@ class NavigationLayout extends Component {
     }
 
     renderIcon (iconName, isSelected) {
-        //Determine what color the icon should be based on isSelected
-        // Return the icon component with appropriate props set
         return (
         <Icon name={iconName} size={30} color={isSelected} />
         );

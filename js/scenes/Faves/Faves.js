@@ -6,6 +6,7 @@ import {
   ScrollView,
   ActivityIndicator
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 import Schedule from '../Schedule/Schedule';
 import { formatSessionData } from '../../lib/dataHelpers';
@@ -17,6 +18,12 @@ const Faves = ({faveSession, currentNavigatorUID, faves}) => {
       currentNavigatorUID={currentNavigatorUID}
       faves={faves}
     />
+  )
+}
+
+Faves.propTypes = {
+  faves: PropTypes.arrayOf(
+    PropTypes.string
   )
 }
 

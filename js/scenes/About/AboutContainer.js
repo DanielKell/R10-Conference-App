@@ -58,7 +58,14 @@ show = () => {
 }
 
 AboutContainer.propTypes = {
-
+  loading: PropTypes.bool.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.bool
+    })
+  )
 }
 
 const mapStateToProps = (state) => {

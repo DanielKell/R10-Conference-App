@@ -12,9 +12,6 @@ import { Router } from '../navigation/routes';
 import { colors, fonts } from '../config/styles';
 import BackgroundGradient from '../components/BackgroundGradient/';
 
-// Treat the DrawerNavigationLayout route like any other route -- you may want to set
-// it as the intiial route for a top-level StackNavigation
-
 const defaultRouteConfig = {
   navigationBar: {
     fontFamily: fonts.fontMainLight,

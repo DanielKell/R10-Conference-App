@@ -15,11 +15,6 @@ class SessionContainer extends Component {
     }
   }
 
-    // componentDidMount() {
-    //   // this.props.dispatch(fetchFaveIds())
-    //   this.props.dispatch(fetchSpeakerData(this.props.sessionData.speaker));
-    // } 
-
   componentDidMount = () => {
     realm.addListener('change', this.updateFave);
     this.props.dispatch(getAllFaves());
@@ -34,7 +29,7 @@ class SessionContainer extends Component {
 
   render() {
     const { sessionData, speaker, allFavourites } = this.props;
-    // const fave = findFave(this.props.faveIds, sessionData);
+
     return (
       <Sessions sessionData={ sessionData } speakerData={ speaker } faves={allFavourites}/> 
     );
@@ -56,4 +51,3 @@ const mapStateToProps = (state) => {
 
 export default connect (mapStateToProps)(SessionContainer);
 
-// export default SessionContainer

@@ -18,7 +18,6 @@ import {
 
 import Speakers from './Speakers'
 import { fetchSpeakerData } from '../../redux/modules/speakers';
-// import { goToSession } from '../../navigation/navigationHelpers';
 
 class SpeakersContainer extends Component {
 
@@ -31,11 +30,7 @@ class SpeakersContainer extends Component {
     constructor() {
         super();
     }
-
-    // componentDidMount() {
-    //     this.props.dispatch(fetchSpeakerData());
-    // } 
-
+    
     render() {
 
     if(this.props.loading) {

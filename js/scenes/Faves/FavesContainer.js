@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Faves from './Faves'
 import { queryFaves } from '../../config/models';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { ActivityIndicator } from 'react-native';
 
 import { getAllFaves } from '../../redux/modules/faves';
@@ -54,6 +55,27 @@ class FaveContainer extends Component {
   }
 }
 
+FaveContainer.propTypes = {
+  loading: PropTypes.bool,
+  dispatch: PropTypes.func,
+  faves: PropTypes.arrayOf(
+    PropTypes.string
+  ),
+  sessionData: PropTypes.arrayOf(
+    PropTypes.shape({
+      data: PropTypes.arrayOf(
+        PropTypes.shape({
+          location: PropTypes.string,
+          title: PropTypes.string,
+          start_time: PropTypes.number,
+          description: PropTypes.string,
+          speaker: PropTypes.string
+        })
+      ),
+      title: PropTypes.number
+    })
+  ),
+}
 
 const mapStateToProps = state => {
   return {

@@ -1,10 +1,6 @@
 import { formatSessionData } from '../../lib/dataHelpers';
 
-//Name actions
-
 const FETCH_SESSIONS = 'fetch_sessions';
-
-//Create action creators
 
 export function fetchSessions(placeholder) {
     return {
@@ -12,8 +8,6 @@ export function fetchSessions(placeholder) {
         payload: placeholder
     }
 }
-
-//Make async action creator
 
 export function fetchingSessions() {
     return (dispatch) => {
@@ -28,8 +22,6 @@ export function fetchingSessions() {
     }
 }
 
-// Create and export reducer
-
 const initialState = {
     loading: true,
     sessionsData: []
@@ -43,7 +35,6 @@ const initialState = {
                  ...state,
                  loading: false,
                  sessionsData: action.payload
-                 //Removed action.payload because don't need payload?
              };
          default:
              return state;

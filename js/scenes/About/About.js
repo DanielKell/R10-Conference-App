@@ -76,7 +76,12 @@ show = () => {
 }
 
 About.propTypes = {
-
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string
+    })
+  ).isRequired
 }
 
 export default About;
