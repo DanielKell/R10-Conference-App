@@ -26,11 +26,6 @@ const defaultRouteConfig = {
 }
 
 class NavigationLayout extends Component {
-  // static route = {
-  //   navigationBar: {
-  //     visible: false,
-  //   }
-  // };
 
   render() {
     return (
@@ -44,6 +39,7 @@ class NavigationLayout extends Component {
           id='schedule'
           selectedStyle={styles.selectedItemStyle}
           renderTitle={isSelected => this._renderTitle('Schedule', isSelected)}
+          renderIcon={isSelected => this._renderIcon("md-calendar", isSelected)}
         >
           <StackNavigation
             id='schedule'
@@ -56,6 +52,7 @@ class NavigationLayout extends Component {
           id='faves'
           selectedStyle={styles.selectedItemStyle}
           renderTitle={isSelected => this._renderTitle('Faves', isSelected)}
+          renderIcon={isSelected => this._renderIcon("md-heart", isSelected)}
         >
           <StackNavigation
             id='faves'
@@ -68,6 +65,7 @@ class NavigationLayout extends Component {
           id='about'
           selectedStyle={styles.selectedItemStyle}
           renderTitle={isSelected => this._renderTitle('About', isSelected)}
+          renderIcon={isSelected => this._renderIcon("md-information-circle", isSelected)}
         >
           <StackNavigation
             id='about'
@@ -94,6 +92,11 @@ class NavigationLayout extends Component {
       </Text>
     );
   }
+
+  _renderIcon(iconName, isSelected) {
+    const color = isSelected ? colors.purple : colors.mediumGrey;
+    return <Icon name={iconName} color={color} size={22}  />
+  }
 }
 
 const styles = StyleSheet.create({
@@ -102,15 +105,17 @@ const styles = StyleSheet.create({
   },
 
   selectedItemStyle: {
-    backgroundColor: 'blue'
+    backgroundColor: colors.lightGrey
   },
 
   titleText: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginLeft: 12,
+    fontFamily: fonts.fontMainReg
   },
 
   selectedTitleText: {
-    color: 'white'
+    color: colors.purple
   }
 });
 

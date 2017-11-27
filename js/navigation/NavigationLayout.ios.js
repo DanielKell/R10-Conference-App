@@ -78,16 +78,6 @@ class NavigationLayout extends Component {
         </TabItem>
 
 
-        {/*<TabItem
-          id="profile"
-          title="Profile"
-          selectedStyle={styles.selectedTab}
-          renderIcon={(isSelected) => <Image source={require('./assets/images/profile.png')} /> }>
-          <StackNavigation
-            id="profile"
-            initialRoute={Router.getRoute('profile')}
-          />
-        </TabItem>*/}
       </TabNavigation>
         );
     }
