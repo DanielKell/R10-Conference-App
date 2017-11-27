@@ -25,10 +25,12 @@ const Sessions = ({sessionData, speakerData, faves}) => {
             <Text style={styles.title}>{sessionData.title}</Text>
             <Text style={styles.time}>{moment.unix(sessionData.start_time).format('LT')}</Text>
             <Text style={styles.description}>{sessionData.description}</Text>
-            <Text style={styles.subheading}>Presented By:</Text>
+            {speakerData && <Text style={styles.subheading}>Presented By:</Text>}
         </View>
+        
+        {speakerData && 
         <View>
-            
+        <View>    
         <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>
             <View style={styles.speaker}>
                 <Image
@@ -39,6 +41,7 @@ const Sessions = ({sessionData, speakerData, faves}) => {
             </View>
         </TouchableHighlight>
         </View>
+        
 
       <Button
         onPress={faves.indexOf(sessionData.session_id) >=0 ? () => deleteFave(sessionData.session_id): () => createFave(sessionData.session_id)}
@@ -46,7 +49,8 @@ const Sessions = ({sessionData, speakerData, faves}) => {
         color="#841584"
         accessibilityLabel={faves.indexOf(sessionData.session_id) >=0 ? "Add session to favourite" : "Remove session to favourite"}
       />
-
+      </View>
+        }
     </ScrollView>
   )
 }
