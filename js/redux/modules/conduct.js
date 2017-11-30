@@ -1,10 +1,5 @@
-//fetch code of conduct
-
-//Name actions
 
 const FETCH_CONDUCT = 'fetch_conduct';
-
-//Create action creators
 
 export function fetchCodeOfConduct(data) {
     return {
@@ -12,8 +7,6 @@ export function fetchCodeOfConduct(data) {
         payload: data
     }
 }
-
-//Make async action creator
 
 export function fetchingConduct() {
     return (dispatch) => {
@@ -26,7 +19,7 @@ export function fetchingConduct() {
             })
     }
 }
-// Create and export reducer
+
 const initialState = {
     loading: true,
     codeOfConductData: []
@@ -45,7 +38,3 @@ const initialState = {
              return state;
      }
  }
-
-//Then import and combine in reducers.js
-
-//Refactor about container to pull in redux data and pass it in correctly

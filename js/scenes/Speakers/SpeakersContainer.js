@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { NavigationStyles } from '@expo/ex-navigation'
 
 import {
   ActivityIndicator,
@@ -24,6 +25,9 @@ class SpeakersContainer extends Component {
     static route = {
         navigationBar: {
         title: 'Speakers',
+    },
+        styles: {
+            ...NavigationStyles.SlideVertical
         }
     }
 

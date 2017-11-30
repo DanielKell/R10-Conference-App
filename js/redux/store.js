@@ -13,9 +13,9 @@ const createStoreWithNavigation = createNavigationEnabledStore({
 
 const store = createStoreWithNavigation(
   reducers,
-  {}, // initial state
+  {}, 
   composeEnhancers(
     applyMiddleware(thunk)
-  ) // enhancers
+  ) 
 );
 export default store;
