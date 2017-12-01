@@ -6,7 +6,7 @@ import { colors } from '../../config/styles';
 
 import BackgroundGradient from '../BackgroundGradient';
 
-const Button = ({buttonText}) => {
+const CustomButton = ({buttonText}) => {
   return (
     <View style={styles.button}>
         <BackgroundGradient colors={[colors.purple, colors.blue]} />
@@ -15,8 +15,8 @@ const Button = ({buttonText}) => {
   );
 }
 
-Button.propTypes = {
+CustomButton.propTypes = {
 
 }
 
-export default Button;
+export default CustomButton;

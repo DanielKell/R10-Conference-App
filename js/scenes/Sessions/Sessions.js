@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import { goToSpeaker } from '../../navigation/navigationHelpers'
 import { styles } from './styles';
-import Button from '../../components/Button';
+import CustomButton from '../../components/CustomButton';
 import { createFave, deleteFave } from '../../config/models';
 
 const Sessions = ({sessionData, speakerData, faves}) => {
@@ -43,7 +43,7 @@ const Sessions = ({sessionData, speakerData, faves}) => {
         </View>
             <TouchableOpacity onPress={faves.indexOf(sessionData.session_id) >=0 ? () => deleteFave(sessionData.session_id): () => createFave(sessionData.session_id)}>
                 <View style={styles.buttonStyles}>
-                <Button 
+                <CustomButton 
                     buttonText={faves.indexOf(sessionData.session_id) >=0 ? "Remove from Faves" : "Add to Faves"}
                 />
                 </View>

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Platform, Text, View, ScrollView, Image, TouchableOpacity, Linking } from 'react-native';
+import { Text, View, ScrollView, Image, TouchableOpacity, Linking } from 'react-native';
 
 import { styles } from './styles';
-import Button from '../../components/Button';
+import CustomButton from '../../components/CustomButton';
 
 const Speakers = ({ speakerData }) => {
   return (
@@ -25,7 +25,7 @@ const Speakers = ({ speakerData }) => {
                     onPress={() => Linking.openURL(`${speakerData.url}`)}
                     style={styles.button}
                 >
-                    <Button buttonText="Read more on Wikipedia"/>
+                    <CustomButton buttonText="Read more on Wikipedia"/>
                 </TouchableOpacity>
             </View>
       </View>
