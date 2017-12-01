@@ -1,41 +1,39 @@
-import Realm from 'realm';
+import Realm from "realm";
 
 const Faves = {
-  name: 'Fave',
-  primaryKey: 'id',
+  name: "Fave",
+  primaryKey: "id",
   properties: {
-    id: 'string',
-    faved_on: 'date',
+    id: "string",
+    faved_on: "date"
   }
 };
 
-const realm = new Realm({schema: [Faves]});
+const realm = new Realm({ schema: [Faves] });
 
 export const queryFaves = () => {
-    return realm.objects("Fave");
-}
+  return realm.objects("Fave");
+};
 
-export const deleteFave = (id) => {
-    let fav = realm.objects('Fave').filtered('id ==$0', id)
-    try {
-        realm.write(() => {
-            realm.delete(fav)
-        })
-    } catch (e) {
-        console.log('error deleting fav', e)
-    }
-}
-
-export const createFave = (session_id) => {
-
-    try {
+export const deleteFave = id => {
+  let fav = realm.objects("Fave").filtered("id ==$0", id);
+  try {
     realm.write(() => {
-        realm.create('Fave', {id: session_id, faved_on: new Date()});
+      realm.delete(fav);
     });
-    } catch (e) {
-        console.log("Error on creation");
-    }
-}
+  } catch (e) {
+    console.log("error deleting fav", e);
+  }
+};
 
-export default new Realm({schema: [Faves]});
+export const createFave = session_id => {
+  try {
+    realm.write(() => {
+      realm.create("Fave", { id: session_id, faved_on: new Date() });
+    });
+  } catch (e) {
+    console.log("Error on creation");
+  }
+};
 
+export default new Realm({ schema: [Faves] });

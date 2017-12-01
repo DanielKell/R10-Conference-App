@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { colors, fonts } from '../../config/styles';
+import { StyleSheet } from "react-native";
+import { colors, fonts } from "../../config/styles";
 
 export const styles = StyleSheet.create({
   container: {
@@ -7,21 +7,21 @@ export const styles = StyleSheet.create({
     padding: 6
   },
   locationContainer: {
-    width: '100%',
+    width: "100%",
     padding: 12,
     flex: 0,
-    flexDirection: 'row',
-    justifyContent: 'space-between'
+    flexDirection: "row",
+    justifyContent: "space-between"
   },
   contentContainer: {
-    width: '100%',
+    width: "100%",
     padding: 12
   },
   title: {
     marginBottom: 10,
     fontSize: 22,
     fontFamily: fonts.fontMainReg,
-    fontWeight: 'bold'
+    fontWeight: "bold"
   },
   description: {
     marginBottom: 10,
@@ -33,25 +33,24 @@ export const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 10,
     color: colors.red,
-    fontFamily: fonts.fontMainReg,
+    fontFamily: fonts.fontMainReg
   },
   subheading: {
     marginTop: 10,
     color: colors.mediumGrey,
-    fontFamily: fonts.fontMainReg,
+    fontFamily: fonts.fontMainReg
   },
   image: {
     marginRight: 8,
     borderRadius: 25,
     height: 50,
-    width: 50,
+    width: 50
   },
   speaker: {
     flex: 0,
-    flexDirection: 'row',
+    flexDirection: "row",
     marginLeft: 10,
-    alignItems: 'center',
-
+    alignItems: "center"
   },
   speakerName: {
     fontFamily: fonts.fontMainReg

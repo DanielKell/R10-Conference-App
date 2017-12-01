@@ -1,18 +1,18 @@
-import { StyleSheet } from 'react-native';
-import { colors, fonts } from '../../config/styles';
+import { StyleSheet } from "react-native";
+import { colors, fonts } from "../../config/styles";
 
 export const styles = StyleSheet.create({
   titleContainer: {
-    alignItems: 'center',
-    flexDirection: 'row',
+    alignItems: "center",
+    flexDirection: "row",
     marginTop: 10,
     marginBottom: 10,
     flex: 0
   },
   subheading: {
-    color: colors.purple, 
+    color: colors.purple,
     fontFamily: fonts.fontMainReg,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginLeft: 5
   },
   content: {

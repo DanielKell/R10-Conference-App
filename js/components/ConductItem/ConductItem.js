@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import {
   View,
   Text,
@@ -8,8 +8,8 @@ import {
   UIManager,
   TouchableOpacity,
   Animated
-} from 'react-native';
-import { styles } from './styles';
+} from "react-native";
+import { styles } from "./styles";
 
 class ConductItem extends Component {
   constructor() {
@@ -18,54 +18,54 @@ class ConductItem extends Component {
     this.state = {
       display: false,
       spin: new Animated.Value(0)
-    }
+    };
 
-    if (Platform.OS === 'android') {
-      UIManager.setLayoutAnimationEnabledExperimental 
-      && UIManager.setLayoutAnimationEnabledExperimental(true);
+    if (Platform.OS === "android") {
+      UIManager.setLayoutAnimationEnabledExperimental &&
+        UIManager.setLayoutAnimationEnabledExperimental(true);
     }
   }
 
   showItem = () => {
     this.state.spin.setValue(0);
     LayoutAnimation.easeInEaseOut();
-    this.setState({ display: !this.state.display })
+    this.setState({ display: !this.state.display });
 
-    Animated.timing(
-      this.state.spin, { toValue: 1, duration: 350 }
-    ).start();
-  } 
+    Animated.timing(this.state.spin, { toValue: 1, duration: 350 }).start();
+  };
 
   render() {
-
     let spin = this.state.spin.interpolate({
       inputRange: [0, 1],
-      outputRange: ['0deg', '180deg']
-    })
+      outputRange: ["0deg", "180deg"]
+    });
 
     let animatedStyle = {
-      transform: [
-        { rotate: spin }
-      ]
-    }
+      transform: [{ rotate: spin }]
+    };
 
-    return(
+    return (
       <View>
         <TouchableOpacity onPress={this.showItem}>
           <View style={styles.titleContainer}>
-            <Animated.Text style={[styles.subheading, animatedStyle]}>{this.state.display ? "-" : "+"}</Animated.Text>
+            <Animated.Text style={[styles.subheading, animatedStyle]}>
+              {this.state.display ? "-" : "+"}
+            </Animated.Text>
             <Text style={styles.subheading}>{this.props.itemData.title}</Text>
           </View>
         </TouchableOpacity>
         <View>
-          {this.state.display && <Text style={styles.content}>{this.props.itemData.description}</Text>}
+          {this.state.display && (
+            <Text style={styles.content}>
+              {this.props.itemData.description}
+            </Text>
+          )}
         </View>
       </View>
     );
   }
 }
 
-ConductItem.propTypes = {
-}
+ConductItem.propTypes = {};
 
 export default ConductItem;

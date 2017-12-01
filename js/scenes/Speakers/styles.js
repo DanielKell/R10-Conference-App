@@ -1,25 +1,25 @@
-import { StyleSheet } from 'react-native';
-import { fonts } from '../../config/styles';
+import { StyleSheet } from "react-native";
+import { fonts } from "../../config/styles";
 
 export const styles = StyleSheet.create({
   speakerContainer: {
     padding: 15,
-    backgroundColor: 'black'
+    backgroundColor: "black"
   },
   titleContainer: {
     marginTop: 15,
     flex: 0,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    flexDirection: 'row',
+    alignItems: "center",
+    justifyContent: "flex-start",
+    flexDirection: "row"
   },
   title: {
-    color: 'white',
-    width: '85%',
+    color: "white",
+    width: "85%",
     fontFamily: fonts.fontMainReg,
     fontSize: 16,
-    fontWeight: 'bold',
-    textAlign: 'center'
+    fontWeight: "bold",
+    textAlign: "center"
   },
   container: {
     marginTop: 20,
@@ -28,12 +28,12 @@ export const styles = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 15,
     flex: 0,
-    alignItems: 'center',
-    backgroundColor: 'white',
+    alignItems: "center",
+    backgroundColor: "white",
     borderRadius: 20
   },
   contentContainer: {
-   padding: 12
+    padding: 12
   },
   image: {
     height: 100,
@@ -43,10 +43,10 @@ export const styles = StyleSheet.create({
   heading: {
     fontSize: 22,
     fontFamily: fonts.fontMainReg,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: "bold",
+    textAlign: "center",
     marginTop: 12,
-    marginBottom: 12,
+    marginBottom: 12
   },
   content: {
     fontFamily: fonts.fontMainLight,
