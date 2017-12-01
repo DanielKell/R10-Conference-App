@@ -18,10 +18,6 @@ class SpeakersContainer extends Component {
             ...NavigationStyles.SlideVertical
         }
     }
-
-    constructor() {
-        super();
-    }
     
     render() {
 

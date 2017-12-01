@@ -16,10 +16,6 @@ class ScheduleContainer extends Component {
         }
     }
 
-    constructor() {
-        super();
-    }
-
     componentDidMount() {
         this.props.dispatch(fetchingSessions());
         this.props.dispatch(getAllFaves());
