@@ -3,6 +3,7 @@
  */
 
 import React, { Component } from 'react';
+import { StatusBar } from 'react-native';
 
 import {
   NavigationProvider,
@@ -18,6 +19,8 @@ const navigationContext = new NavigationContext({
   router: Router,
   store: Store,
 })
+
+StatusBar.setBarStyle('light-content', true); 
 
 export default class App extends Component<{}> {
   render() {
