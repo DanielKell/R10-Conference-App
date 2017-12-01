@@ -18,7 +18,7 @@ class SpeakersContainer extends Component {
 
   render() {
     if (this.props.loading) {
-      return <ActivityIndicator animating={true} />;
+      return <ActivityIndicator style={{alignItems: "center", flex: 1}} animating={true} />;
     } else {
       return <Speakers speakerData={this.props.speaker} />;
     }

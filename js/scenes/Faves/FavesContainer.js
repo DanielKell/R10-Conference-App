@@ -42,7 +42,7 @@ class FaveContainer extends Component {
     });
 
     if (this.props.loading) {
-      return <ActivityIndicator animating={true} />;
+      return <ActivityIndicator style={{alignItems: "center", flex: 1}} animating={true} />;
     } else {
       return (
         <Faves
