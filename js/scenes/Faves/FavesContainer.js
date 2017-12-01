@@ -26,6 +26,7 @@ class FaveContainer extends Component {
   componentWillUnmount = () => {
     realm.removeListener('change', this.updateFave);
   }
+  
   render() {
     const { sessionData, allFavourites } = this.props;
 
