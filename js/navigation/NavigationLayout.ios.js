@@ -38,7 +38,7 @@ class NavigationLayout extends Component {
 
         <TabItem
           id="schedule"
-          title="schedule"
+          title="Schedule"
           renderTitle={this.renderTitle}
           renderIcon={isSelected => this.renderIcon("ios-calendar", getColor(isSelected))}
         >
@@ -51,7 +51,7 @@ class NavigationLayout extends Component {
 
         <TabItem
           id="faves"
-          title="faves"
+          title="Faves"
           renderTitle={this.renderTitle}
           renderIcon={isSelected => this.renderIcon("ios-heart", getColor(isSelected))}
         >
@@ -64,7 +64,7 @@ class NavigationLayout extends Component {
 
         <TabItem
           id="about"
-          title="about"
+          title="About"
           renderTitle={this.renderTitle}
           renderIcon={isSelected => this.renderIcon("ios-information-circle", getColor(isSelected))}
           >
@@ -75,8 +75,6 @@ class NavigationLayout extends Component {
             defaultRouteConfig={defaultRouteConfig}
           />
         </TabItem>
-
-
       </TabNavigation>
         );
     }
@@ -96,7 +94,6 @@ class NavigationLayout extends Component {
             </Text>
         )
     }
-
 }
 
 export default NavigationLayout;

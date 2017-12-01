@@ -32,7 +32,7 @@ class ConductItem extends Component {
     this.setState({ display: !this.state.display })
 
     Animated.timing(
-      this.state.spin, { toValue: 1, duration: 250 }
+      this.state.spin, { toValue: 1, duration: 350 }
     ).start();
   } 
 

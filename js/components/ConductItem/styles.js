@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     color: colors.purple, 
     fontFamily: fonts.fontMainReg,
     fontWeight: 'bold',
-    paddingLeft: 5
+    marginLeft: 5
   },
   content: {
     color: colors.mediumGrey,
