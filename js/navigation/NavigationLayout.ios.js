@@ -14,7 +14,7 @@ import { colors, fonts } from '../config/styles';
 import BackgroundGradient from '../components/BackgroundGradient/';
 
 function getColor(isSelected) {
-  return isSelected ? colors.red : colors.mediumGrey;
+  return isSelected ? 'white' : colors.mediumGrey;
 }
 
 const defaultRouteConfig = {
@@ -90,7 +90,7 @@ class NavigationLayout extends Component {
     renderTitle (isSelected, title) {
         return (
             <Text
-                style={{color: isSelected ? colors.red : colors.mediumGrey}}
+                style={{color: isSelected ? 'white' : colors.mediumGrey}}
             > 
                 {title}
             </Text>
