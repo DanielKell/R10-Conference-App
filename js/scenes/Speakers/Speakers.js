@@ -1,7 +1,5 @@
 import React from 'react';
 import { Platform, Text, View, ScrollView, Image, TouchableOpacity, Linking } from 'react-native';
-import moment from 'moment';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 import { styles } from './styles';
 import Button from '../../components/Button';

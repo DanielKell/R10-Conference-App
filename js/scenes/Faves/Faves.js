@@ -1,11 +1,4 @@
 import React from 'react';
-import {
-  Text,
-  View,
-  Image,
-  ScrollView,
-  ActivityIndicator
-} from 'react-native';
 import PropTypes from 'prop-types';
 
 import Schedule from '../Schedule/Schedule';

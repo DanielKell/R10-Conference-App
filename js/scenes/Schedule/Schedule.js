@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
-import { Platform, Text, SectionList, View, ListItem, TouchableOpacity} from 'react-native';
+import { Platform, Text, SectionList, View, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { styles } from './styles';

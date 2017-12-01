@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors, fonts } from '../../config/styles';
+import { colors } from '../../config/styles';
 
 import BackgroundGradient from '../BackgroundGradient';
 

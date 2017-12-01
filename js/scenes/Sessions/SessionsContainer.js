@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Sessions from './Sessions';
 import { fetchSpeakerData } from '../../redux/modules/speakers';
 
-import { queryFaves } from '../../config/models';
 import { getAllFaves } from '../../redux/modules/faves';
 import realm from '../../config/models';
 

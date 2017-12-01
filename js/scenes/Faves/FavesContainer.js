@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Faves from './Faves'
-import { queryFaves } from '../../config/models';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { ActivityIndicator } from 'react-native';

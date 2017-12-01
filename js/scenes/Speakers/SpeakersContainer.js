@@ -4,22 +4,10 @@ import { connect } from 'react-redux';
 import { NavigationStyles } from '@expo/ex-navigation'
 
 import {
-  ActivityIndicator,
-  FlatList,
-  Image,
-  Modal,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableHighlight,
-  TouchableOpacity,
-  View
+  ActivityIndicator
 } from 'react-native';
 
 import Speakers from './Speakers'
-import { fetchSpeakerData } from '../../redux/modules/speakers';
-
 class SpeakersContainer extends Component {
 
     static route = {

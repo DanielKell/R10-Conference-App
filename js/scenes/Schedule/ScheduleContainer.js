@@ -1,24 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
 import {
-  ActivityIndicator,
-  FlatList,
-  Image,
-  Modal,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableHighlight,
-  TouchableOpacity,
-  View
+  ActivityIndicator
 } from 'react-native';
 
 import Schedule from './Schedule'
 import { fetchingSessions } from '../../redux/modules/sessions';
-import { goToSession } from '../../navigation/navigationHelpers';
 import { getAllFaves } from '../../redux/modules/faves';
 class ScheduleContainer extends Component {
 

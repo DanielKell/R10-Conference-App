@@ -1,4 +1,4 @@
-import { Platform, StyleSheet } from 'react-native';
+import { Platform } from 'react-native';
 
 export const colors = {
     mediumGrey: '#999999',
@@ -20,17 +20,3 @@ export const fonts = {
     }),
     fontMainLight: "Montserrat-Light"
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     ...Platform.select({
-//       ios: {
-//         backgroundColor: 'red',
-//       },
-//       android: {
-//         backgroundColor: 'blue',
-//       },
-//     }),
-//   },
-// });
