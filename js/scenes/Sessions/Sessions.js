@@ -14,20 +14,14 @@ import { goToSpeaker } from "../../navigation/navigationHelpers";
 import { styles } from "./styles";
 import CustomButton from "../../components/CustomButton";
 import { createFave, deleteFave } from "../../config/models";
+import { colors } from "../../config/styles";
 
 const Sessions = ({ sessionData, speakerData, faves }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.locationContainer}>
         <Text style={styles.subheading}>{sessionData.location}</Text>
-        {faves.indexOf(sessionData.session_id) > -1 &&
-        Platform.OS === "ios" && (
-          <Icon name="ios-heart" size={30} color="red" />
-        )}
-        {faves.indexOf(sessionData.session_id) > -1 &&
-        Platform.OS === "android" && (
-          <Icon name="md-heart" size={30} color="red" />
-        )}
+        {faves.indexOf(sessionData.session_id) > -1 ? <Icon style={styles.faveHeart} name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={20} color={colors.red} /> : false}
       </View>
       <View style={styles.contentContainer}>
         <Text style={styles.title}>{sessionData.title}</Text>

@@ -24,13 +24,7 @@ const ScheduleList = ({ sessionData, favesData, route }) => (
             <Text style={styles.itemTitle}>{item.title}</Text>
             <View style={styles.locationInfo}>
               <Text style={styles.itemLocation}>{item.location}</Text>
-              {favesData.find(x => item.session_id === x.id) &&
-              Platform.ios === "ios" && (
-                <Icon name={"ios-heart"} color={colors.red} />
-              )}
-              {favesData.find(x => item.session_id === x.id) && (
-                <Icon name={"md-heart"} color={colors.red} />
-              )}
+              {favesData.find(x => item.session_id === x.id) ? <Icon style={styles.faveHeart} name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={20} color={colors.red} /> : false}
             </View>
           </View>
         </TouchableOpacity>
