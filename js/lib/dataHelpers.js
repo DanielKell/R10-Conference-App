@@ -1,10 +1,10 @@
-// Helper to format format individual Firebase records
+// Format individual Firebase records
 export const formatDataObject = data => {
   const dataObject = Object.getOwnPropertyNames(data).map(index => data[index]);
   return dataObject[0];
 };
 
-// Helper to format Firebase data into section list data
+// Format Firebase data into section list data
 export const formatSessionData = sessions => {
   return sessions
     .reduce((acc, curr) => {

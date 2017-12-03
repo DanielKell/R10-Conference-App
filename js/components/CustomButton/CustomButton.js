@@ -9,8 +9,9 @@ import BackgroundGradient from "../BackgroundGradient";
 const CustomButton = ({ buttonText }) => {
   return (
     <View style={styles.button}>
-      <BackgroundGradient colors={[colors.purple, colors.blue]} />
-      <Text style={styles.buttonsText}>{buttonText}</Text>
+      <BackgroundGradient colors={[colors.purple, colors.blue]} >
+        <Text style={styles.buttonsText}>{buttonText}</Text>
+      </BackgroundGradient>
     </View>
   );
 };
