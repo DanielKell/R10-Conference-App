@@ -3,6 +3,8 @@
 This native mobile app displays the schedule for an upcoming developer conference. It allows users to set certain talks
 as favourites, which are then populated in their faves tab. It was built using React Native to support both ios and Android
 
+![](/ios/screenshots/screenshot1.png)
+
 # Setup
 Run `npm install` to install dependencies. In your local development environment, start a React Native packager.
 
@@ -25,6 +27,8 @@ Note: The app was designed for smaller sized iphones in an attempt to style for 
 - PropTypes
 
 # Left to do:
-- Fix a bug with the button text appearing below the button
-- Add a "Maps" page
-- Finish adding Proptypes
+- All done!
+
+# Project Learnings
+
+The project taught how to build in React Native and highlighted the differences between that and normal React. With the current version of React Native most of the challenges for developing simultaneously for both Andorid and Iphone have been ironed out, but some customization was necessary for custom buttons, navigation, and layouts.
