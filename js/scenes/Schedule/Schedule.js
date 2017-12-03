@@ -62,6 +62,26 @@ const Schedule = ({ data, currentNavigatorUID, faves }) => (
   />
 );
 
-Schedule.propTypes = {};
+Schedule.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.number.isRequired,
+      data: PropTypes.arrayOf(
+        PropTypes.shape({
+          location: PropTypes.string,
+          title: PropTypes.string,
+          start_time: PropTypes.number,
+          description: PropTypes.string,
+          session_id: PropTypes.string,
+          speaker: PropTypes.string
+        })
+      )}
+    )
+  ),
+  renderItem: PropTypes.func,
+  faves: PropTypes.arrayOf(
+    PropTypes.string
+  )
+}
 
 export default Schedule;

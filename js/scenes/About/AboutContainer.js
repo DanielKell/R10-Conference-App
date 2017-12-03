@@ -30,11 +30,16 @@ class AboutContainer extends Component {
 AboutContainer.propTypes = {
   loading: PropTypes.bool.isRequired,
   dispatch: PropTypes.func.isRequired,
-  data: PropTypes.arrayOf(
+  conductData: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.string,
-      description: PropTypes.bool
-    })
+    loading: PropTypes.bool,
+    codeOfConductData: PropTypes.arrayOf(
+      PropTypes.shape({
+      description: PropTypes.string,
+      title: PropTypes.string
+      })
+    )
+  })
   )
 };
 

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import Sessions from "./Sessions";
 import { fetchSpeakerData } from "../../redux/modules/speakers";
-
 import { getAllFaves } from "../../redux/modules/faves";
 import realm from "../../config/models";
 
@@ -39,7 +39,29 @@ class SessionContainer extends Component {
   }
 }
 
-SessionContainer.propTypes = {};
+SessionContainer.propTypes = {
+  sessionData: PropTypes.shape({
+    location: PropTypes.string,
+    title: PropTypes.string,
+    start_time: PropTypes.number,
+    description: PropTypes.string,
+    speaker: PropTypes.string,
+    session_id: PropTypes.string,
+  }),
+  loading: PropTypes.bool.isRequired,
+  speaker: PropTypes.shape({
+      bio: PropTypes.string,
+      name: PropTypes.string,
+      image: PropTypes.string,
+      speaker_id: PropTypes.string,
+      session: PropTypes.string,
+      url: PropTypes.string
+  }),
+  dispatch: PropTypes.func,
+  allFavourites: PropTypes.arrayOf(
+    PropTypes.string
+  )
+}
 
 const mapStateToProps = state => {
   return {

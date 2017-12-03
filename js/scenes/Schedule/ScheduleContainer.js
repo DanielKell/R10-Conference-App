@@ -33,7 +33,32 @@ class ScheduleContainer extends Component {
   }
 }
 
-ScheduleContainer.propTypes = {};
+ScheduleContainer.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  currentNavigatorUID: PropTypes.string,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.number.isRequired,
+      data: PropTypes.arrayOf(
+        PropTypes.shape({
+          location: PropTypes.string,
+          title: PropTypes.string,
+          start_time: PropTypes.number,
+          description: PropTypes.string,
+          session_id: PropTypes.string,
+          speaker: PropTypes.string
+        })
+      )}
+    )
+  ),
+  faves: PropTypes.arrayOf(
+    PropTypes.string
+  ),
+  allFavourites: PropTypes.arrayOf(
+    PropTypes.string
+  ),
+}
 
 const mapStateToProps = state => {
   return {

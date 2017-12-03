@@ -25,7 +25,15 @@ class SpeakersContainer extends Component {
   }
 }
 
-SpeakersContainer.propTypes = {};
+SpeakersContainer.propTypes = {
+  speaker: PropTypes.shape({
+    image: PropTypes.string,
+    name: PropTypes.string,
+    bio: PropTypes.string,
+    url: PropTypes.url
+  }),
+  loading: PropTypes.bool
+}
 
 const mapStateToProps = state => {
   return {

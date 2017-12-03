@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Linking
 } from "react-native";
+import PropTypes from "prop-types";
 
 import { styles } from "./styles";
 import CustomButton from "../../components/CustomButton";
@@ -36,5 +37,14 @@ const Speakers = ({ speakerData }) => {
     </ScrollView>
   );
 };
+
+Speakers.propTypes = {
+  speakerData: PropTypes.shape({
+    image: PropTypes.string,
+    name: PropTypes.string,
+    bio: PropTypes.string,
+    url: PropTypes.url
+  })
+}
 
 export default Speakers;

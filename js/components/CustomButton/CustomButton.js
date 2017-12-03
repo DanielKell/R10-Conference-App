@@ -16,6 +16,8 @@ const CustomButton = ({ buttonText }) => {
   );
 };
 
-CustomButton.propTypes = {};
+CustomButton.propTypes = {
+  buttonText: PropTypes.string
+};
 
 export default CustomButton;

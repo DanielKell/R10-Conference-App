@@ -66,6 +66,11 @@ class ConductItem extends Component {
   }
 }
 
-ConductItem.propTypes = {};
+ConductItem.propTypes = {
+  itemData: PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string
+  })
+}
 
 export default ConductItem;

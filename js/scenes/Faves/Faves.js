@@ -7,6 +7,7 @@ import { formatSessionData } from "../../lib/dataHelpers";
 import { styles } from "./styles";
 
 const Faves = ({ faveSession, currentNavigatorUID, faves }) => {
+  console.log(faveSession)
   return (
     <View>
       {faves.length !== 0 ? (
@@ -25,7 +26,17 @@ const Faves = ({ faveSession, currentNavigatorUID, faves }) => {
 };
 
 Faves.propTypes = {
-  faves: PropTypes.arrayOf(PropTypes.string)
+  faves: PropTypes.arrayOf(PropTypes.string),
+  currentNavigatorUID: PropTypes.string,
+  faveSession: PropTypes.arrayOf(
+        PropTypes.shape({
+          location: PropTypes.string,
+          title: PropTypes.string,
+          start_time: PropTypes.number,
+          description: PropTypes.string,
+          speaker: PropTypes.string
+        })
+      )
 };
 
 export default Faves;

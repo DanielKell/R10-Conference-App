@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import moment from "moment";
 import Icon from "react-native-vector-icons/Ionicons";
+import PropTypes from "prop-types";
 
 import { goToSpeaker } from "../../navigation/navigationHelpers";
 import { styles } from "./styles";
@@ -71,5 +72,27 @@ const Sessions = ({ sessionData, speakerData, faves }) => {
     </ScrollView>
   );
 };
+
+Sessions.propTypes = {
+  sessionData: PropTypes.shape({
+    location: PropTypes.string,
+    title: PropTypes.string,
+    start_time: PropTypes.number,
+    description: PropTypes.string,
+    speaker: PropTypes.string,
+    session_id: PropTypes.string,
+  }),
+  speakerData: PropTypes.shape({
+      bio: PropTypes.string,
+      name: PropTypes.string,
+      image: PropTypes.string,
+      speaker_id: PropTypes.string,
+      session: PropTypes.string,
+      url: PropTypes.string
+  }),
+  faves: PropTypes.arrayOf(
+    PropTypes.string
+  )
+}
 
 export default Sessions;

@@ -58,6 +58,8 @@ class FaveContainer extends Component {
 FaveContainer.propTypes = {
   loading: PropTypes.bool,
   dispatch: PropTypes.func,
+  currentNavigatorUID: PropTypes.string,
+  allFavourites: PropTypes.arrayOf(PropTypes.string),
   faves: PropTypes.arrayOf(PropTypes.string),
   sessionData: PropTypes.arrayOf(
     PropTypes.shape({
